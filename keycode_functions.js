@@ -1,19 +1,25 @@
-function change_greeting() {
-  document.getElementById("hello_world").innerHTML = "HELLO, I SAIDZ!";
-}
+// keycode_functions.js
 
-//let fileData = ""
+let codes = [];
+let currentIndex = 0;
 
-var myCodes = ["0123", "1234", "2345"];
 var codeCounter = 0;
 function init_keycode_logic() { 
-  //document.getElementById("code").innerHTML = myCodes[0];
+  return fetch("210_codes.json")
+    .then(r => r.json())
+    .then(data => {
+      codes = data;
+      console.log("Codes loaded:", codes.length, "entries");
+    });
 }
 
-function get_next_code(type) {
-  document.getElementById("code").innerHTML = myCodes[codeCounter];
-  codeCounter++;
-  if (codeCounter >= myCodes.length) {
-    codeCounter = 0;
+function get_next_code() {
+  if (codes.length === 0) {
+    document.getElementById("code").innerHTML = "null";
+    return "null"; // not loaded yet
   }
+  const code = codes[currentIndex];
+  currentIndex = (currentIndex + 1) % codes.length;
+  document.getElementById("code").innerHTML = code;
+  return code;
 }
