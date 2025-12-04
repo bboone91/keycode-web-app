@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<script src="keycode_functions.js"></script>
 <html>
-  <head>WELCOME</head>
-  <body onload="init_keycode_logic()">
-    <p id="hello_world">Hello <strong>world!</strong></p>
-	<button type="button" onclick="change_greeting()">Click Me</button>
-	<p id="code">TBDZ</p>
-	<button type="button" onclick="get_next_code()">Get a new code</button>
-  </body>
+
+<head>
+  <title>WELCOME</title>
+
+  <!-- PWA manifest link -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- Your JavaScript -->
+  <script src="keycode_functions.js" defer></script>
+
+  <!-- Optional: CSS -->
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+
+</head>
+
+<body onload="init_keycode_logic()">
+  <p id="hello_world">Hello <strong>world!</strong></p>
+  <button type="button" onclick="change_greeting()">Click Me</button>
+  <p id="code">TBDZ</p>
+  <button type="button" onclick="get_next_code()">Get a new code</button>
+</body>
+
 </html>

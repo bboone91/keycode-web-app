@@ -2,8 +2,6 @@ function change_greeting() {
   document.getElementById("hello_world").innerHTML = "HELLO, I SAIDZ!";
 }
 
-
-
 //let fileData = ""
 
 var myCodes = ["0123", "1234", "2345"];
